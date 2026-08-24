@@ -46,11 +46,7 @@ jobs:
           node-version: 24
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm db:migrate
-      - name: Diagnose formatting
-        run: |
-          pnpm exec prettier --write packages/contracts/src/index.ts packages/domain/src/index.ts packages/routing/src/index.ts
-          git diff -- packages/contracts/src/index.ts packages/domain/src/index.ts packages/routing/src/index.ts
-          git diff --quiet -- packages/contracts/src/index.ts packages/domain/src/index.ts packages/routing/src/index.ts
+      - run: pnpm format:check
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test

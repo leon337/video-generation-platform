@@ -80,11 +80,7 @@ export interface ProviderUsage {
 
 export interface ProviderHealth {
   readonly state:
-    | 'AVAILABLE'
-    | 'DEGRADED'
-    | 'RATE_LIMITED'
-    | 'DISABLED'
-    | 'UNKNOWN';
+    'AVAILABLE' | 'DEGRADED' | 'RATE_LIMITED' | 'DISABLED' | 'UNKNOWN';
   readonly checkedAt: string;
 }
 

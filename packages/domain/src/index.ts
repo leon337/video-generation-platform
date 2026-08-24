@@ -2,11 +2,7 @@ export type ProjectId = string & { readonly __brand: 'ProjectId' };
 export type SceneId = string & { readonly __brand: 'SceneId' };
 
 export type ProjectStatus =
-  | 'DRAFT'
-  | 'READY'
-  | 'GENERATING'
-  | 'FAILED'
-  | 'COMPLETED';
+  'DRAFT' | 'READY' | 'GENERATING' | 'FAILED' | 'COMPLETED';
 
 export interface Project {
   readonly id: ProjectId;

@@ -6,10 +6,7 @@ export interface RoutingPolicy {
   readonly failClosed: true;
   readonly automaticPaidCalls: false;
   readonly preferredRouteClasses: readonly (
-    | 'FREE'
-    | 'LOCAL'
-    | 'BYOK'
-    | 'PAID'
+    'FREE' | 'LOCAL' | 'BYOK' | 'PAID'
   )[];
   readonly capabilityOverrides?: Readonly<Partial<Record<Capability, number>>>;
 }
