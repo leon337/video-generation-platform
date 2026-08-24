@@ -5,7 +5,12 @@ export interface RoutingPolicy {
   readonly defaultAuthorizedCostUsd: number;
   readonly failClosed: true;
   readonly automaticPaidCalls: false;
-  readonly preferredRouteClasses: readonly ('FREE' | 'LOCAL' | 'BYOK' | 'PAID')[];
+  readonly preferredRouteClasses: readonly (
+    | 'FREE'
+    | 'LOCAL'
+    | 'BYOK'
+    | 'PAID'
+  )[];
   readonly capabilityOverrides?: Readonly<Partial<Record<Capability, number>>>;
 }
 

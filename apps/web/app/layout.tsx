@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   description: 'Short-form video generation platform',
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="pt-BR">
       <body>{children}</body>

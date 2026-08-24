@@ -35,7 +35,9 @@ export class FakeProviderAdapter implements ProviderAdapter {
     return { currency: 'USD', amount: this.costUsd, estimationBasis: 'fake' };
   }
 
-  async checkEligibility(_request: CapabilityRequest): Promise<EligibilityResult> {
+  async checkEligibility(
+    _request: CapabilityRequest,
+  ): Promise<EligibilityResult> {
     return { eligible: true, reasonCodes: [] };
   }
 
@@ -48,7 +50,10 @@ export class FakeProviderAdapter implements ProviderAdapter {
     };
   }
 
-  async submit(_request: CapabilityRequest, idempotencyKey: string): Promise<ProviderSubmission> {
+  async submit(
+    _request: CapabilityRequest,
+    idempotencyKey: string,
+  ): Promise<ProviderSubmission> {
     return { executionId: `fake:${idempotencyKey}`, status: 'ACCEPTED' };
   }
 

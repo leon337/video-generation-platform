@@ -19,7 +19,10 @@ const worker = new Worker(
 );
 
 worker.on('failed', (job, error) => {
-  console.error('worker job failed', { jobId: job?.id, message: error.message });
+  console.error('worker job failed', {
+    jobId: job?.id,
+    message: error.message,
+  });
 });
 
 async function shutdown(): Promise<void> {

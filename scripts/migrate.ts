@@ -26,7 +26,9 @@ async function main(): Promise<void> {
       )
     `);
 
-    const files = (await readdir(migrationsDir)).filter((file) => file.endsWith('.sql')).sort();
+    const files = (await readdir(migrationsDir))
+      .filter((file) => file.endsWith('.sql'))
+      .sort();
 
     for (const filename of files) {
       const sql = await readFile(join(migrationsDir, filename), 'utf8');

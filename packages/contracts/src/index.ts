@@ -79,7 +79,12 @@ export interface ProviderUsage {
 }
 
 export interface ProviderHealth {
-  readonly state: 'AVAILABLE' | 'DEGRADED' | 'RATE_LIMITED' | 'DISABLED' | 'UNKNOWN';
+  readonly state:
+    | 'AVAILABLE'
+    | 'DEGRADED'
+    | 'RATE_LIMITED'
+    | 'DISABLED'
+    | 'UNKNOWN';
   readonly checkedAt: string;
 }
 
@@ -89,7 +94,10 @@ export interface ProviderAdapter {
   estimateCost(request: CapabilityRequest): Promise<CostEstimate>;
   checkEligibility(request: CapabilityRequest): Promise<EligibilityResult>;
   checkQuota(request: CapabilityRequest): Promise<QuotaSnapshot>;
-  submit(request: CapabilityRequest, idempotencyKey: string): Promise<ProviderSubmission>;
+  submit(
+    request: CapabilityRequest,
+    idempotencyKey: string,
+  ): Promise<ProviderSubmission>;
   getStatus(executionId: string): Promise<ProviderExecutionStatus>;
   getResult(executionId: string): Promise<ProviderResult>;
   cancel?(executionId: string): Promise<void>;
@@ -106,7 +114,11 @@ export interface StoredObject {
 }
 
 export interface ObjectStorage {
-  put(key: string, data: Uint8Array, contentType: string): Promise<StoredObject>;
+  put(
+    key: string,
+    data: Uint8Array,
+    contentType: string,
+  ): Promise<StoredObject>;
   createSignedReadUrl(key: string, ttlSeconds: number): Promise<string>;
   delete(key: string): Promise<void>;
 }

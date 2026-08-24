@@ -27,7 +27,9 @@ for (const root of roots) {
   for (const file of await filesUnder(root)) {
     const source = await readFile(file, 'utf8');
     for (const token of forbidden) {
-      if (source.includes(token)) violations.push(`${file}: forbidden dependency token ${token}`);
+      if (source.includes(token)) {
+        violations.push(`${file}: forbidden dependency token ${token}`);
+      }
     }
   }
 }

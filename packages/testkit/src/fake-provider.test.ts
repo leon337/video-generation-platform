@@ -3,7 +3,10 @@ import { FakeProviderAdapter } from './index.js';
 
 describe('FakeProviderAdapter', () => {
   it('exposes only configured capabilities and deterministic fake execution', async () => {
-    const adapter = new FakeProviderAdapter({ capabilities: ['TEXT_TO_VIDEO'], costUsd: 0 });
+    const adapter = new FakeProviderAdapter({
+      capabilities: ['TEXT_TO_VIDEO'],
+      costUsd: 0,
+    });
     expect(await adapter.describeCapabilities()).toEqual(['TEXT_TO_VIDEO']);
     const submission = await adapter.submit(
       {
