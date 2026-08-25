@@ -1,0 +1,7 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  'esbuild@0.28.2': true
+  'msgpackr-extract@3.0.4': false
