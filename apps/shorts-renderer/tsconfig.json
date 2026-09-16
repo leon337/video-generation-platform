@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "rootDir": "src",
+    "types": ["node", "vitest/globals"],
+    "jsx": "react-jsx",
+    "sourceMap": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}
