@@ -1,0 +1,46 @@
+{
+  "id": "06",
+  "title": "Agente GPT + Firecrawl com roteamento automático",
+  "template": "flow",
+  "voice": "pf_dora",
+  "resolution": "draft",
+  "scenes": [
+    {
+      "kind": "hook",
+      "title": "GPT + Firecrawl",
+      "subtitle": "roteamento automático, não escolha aleatória",
+      "narration": "Para integrar Firecrawl a um agente GPT sem deixar a LLM escolher ferramentas de forma aleatória, colocamos um roteador entre o objetivo e a execução."
+    },
+    {
+      "kind": "steps",
+      "title": "Classificar intenção",
+      "points": ["Descobrir", "Extrair", "Operar", "Monitorar"],
+      "narration": "Primeiro o agente classifica a intenção: descobrir uma fonte, ler uma página, percorrer um site, operar um navegador ou monitorar mudanças."
+    },
+    {
+      "kind": "flow",
+      "title": "Antes da ferramenta",
+      "subtitle": "objetivo → política + cache + budget",
+      "narration": "Depois entram os guardas de política, cache e orçamento. Só então o roteador decide qual capacidade realmente precisa ser acionada."
+    },
+    {
+      "kind": "router",
+      "title": "Router escolhe",
+      "points": ["Search / Scrape / Map", "Crawl / Interact / Agent", "Monitor"],
+      "narration": "O router escolhe Search, Scrape, Map, Crawl, Interact, Agent ou Monitor conforme o tipo de tarefa, em vez de deixar a escolha solta para o modelo."
+    },
+    {
+      "kind": "output",
+      "title": "Saída comum",
+      "subtitle": "fonte + conteúdo + status + custo",
+      "narration": "A saída de todas essas ferramentas é normalizada em um formato comum com fonte, conteúdo, status e custo. Se houver erro, a política decide retry, fallback ou interrupção."
+    },
+    {
+      "kind": "cta",
+      "title": "GPT pensa no objetivo",
+      "subtitle": "router cuida da execução",
+      "points": ["MCF Web Intelligence"],
+      "narration": "Com isso, o GPT pensa no objetivo e o router cuida da operação. No MCF, esse padrão também permite trocar Firecrawl por motores locais sem mudar o contrato do agente."
+    }
+  ]
+}
